@@ -1,1 +1,2 @@
-# proj631-huffman
+# proj631-huffman-code
+

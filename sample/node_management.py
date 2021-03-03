@@ -27,28 +27,6 @@ class Node:
 	def set_value(self,value):
 		self.value = value
 
-	def get_list_prefixe(self, node = "Error"):
-		if(node == "Error"):
-			node = self
-		res = ""
-		if(not node is None):
-			res = node.get_label() + node.get_list_prefixe(node.get_left_child()) + node.get_list_prefixe(node.get_right_child())
-		return res
-
-	def set_children(self,children):
-		if(children is not list):
-			children = [children]
-
-		if len(children)<=2:
-			for child in children:
-				set = True
-				if(type(self.get_left_child()) == type(None) and set):
-					self.left_child = child
-					set = False
-				if(type(self.get_right_child()) == type(None) and set):
-					self.right_child = child
-					set = False
-
 
 	def is_leaf(self):
 		return (self.get_right_child() is None) and (self.get_right_child() is None)
@@ -56,7 +34,7 @@ class Node:
 	def get_node_list(self):
 		list_node = [self]
 		if(not self.is_leaf()):
-			if(not self.get_right_child() is None):
+			if(not self.get_right_child() == None):
 				list_node += self.get_right_child().get_node_list()
 			list_node += self.get_left_child().get_node_list()
 		return list_node
@@ -69,15 +47,15 @@ class Node:
 				list_leaf.append(n)
 		return list_leaf
 
-	def get_chemin_vers_node(self,node):
+	def get_chemin_vers_node(self,default_node):
 		path = []
 		list_node = self.get_node_list()
 
-		while self!=node:
-			for n in list_node:
-				if(n.get_left_child() == node or n.get_right_child() == node):
-					path.append(node)
-					node = n
+		while self != default_node:
+			for node in list_node:
+				if(node.get_left_child() == default_node or node.get_right_child() == default_node):
+					path.append(default_node)
+					default_node = node
 
 		path.append(self)
 		path.reverse()

@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
 	huffman_tree = tree_management.HuffmanTree().create_huffman_tree(text_frequences)
 
-	bin_textsimple = tree_management.HuffmanTree().compress_text(huffman_tree,text)
+	
 
 
 

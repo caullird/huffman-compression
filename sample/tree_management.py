@@ -65,8 +65,10 @@ class HuffmanTree:
 
 		for letter in text:
 			result_bin += alphabet_compress[letter]
-		
-		return result_bin
+
+
+		return result_bin,alphabet_compress
+		#return hex(int(result_bin,2))
 
 
 	#Correspondance alphabet to binaire
@@ -81,7 +83,6 @@ class HuffmanTree:
 					string += chemin.get_value()
 
 			list_chemin[chemin.get_label()] = string
-
 
 		return list_chemin
 		

@@ -1,44 +1,33 @@
-from pathlib import Path
-import requirements as require
 
 class Ratio:
 
-	def __init__(self, uncompressed_file,compressed_file,file_name):
+	def __init__(self,alphabet_binaire,text_frequences, uncompressed_file):
+
+		self.alphabet_binaire = alphabet_binaire
+		self.text_frequences = text_frequences
 		self.uncompressed_file = uncompressed_file
-		self.compressed_file = compressed_file
-		self.file_name = file_name
-		self.uncompressed_size = ""
-		self.compressed_size = ""
 		self.precent_save = self.calc_ratio()
 
 
 	def get_uncompressed_file(self):
 		return self.uncompressed_file
 
-	def get_compressed_file(self):
-		return self.compressed_file
-
-	def get_file_name(self):
-		return self.file_name
-
-	def get_uncompressed_size(self):
-		return self.uncompressed_size
-
-	def get_compressed_size(self):
-		return self.compressed_size
-
 	def get_precent_save(self):
 		return self.precent_save
 
-	def set_uncomprossed_size(self,size):
-		self.uncompressed_size = size
+	def get_alphabet_binaire(self):
+		return self.alphabet_binaire
 
-	def set_compressed_size(self,size):
-		self.compressed_size = size
+	def get_text_frequences(self):
+		return self.text_frequences
+
 
 	def calc_ratio(self):
+		count_compress = 0
+		count_initial = len(self.get_uncompressed_file())*8
 
-		self.set_uncomprossed_size(Path(require.initial_data + self.get_file_name()).stat().st_size)
-		self.set_compressed_size(Path(require.result_data + "result_" + self.get_file_name()).stat().st_size)
+		for letter_f in self.get_text_frequences():
+			count_compress += int(len(self.get_alphabet_binaire()[letter_f[0]]) * letter_f[1])
 
-		return 1 - (float(self.get_compressed_size())/float(self.get_uncompressed_size()))
+		return float(count_compress/count_initial)
+

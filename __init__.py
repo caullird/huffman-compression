@@ -8,7 +8,7 @@ import requirements as require
 
 
 class config():
-	FILE_NAME = "extraitalice.txt"
+	FILE_NAME = "bonjour.txt"
 
 
 if __name__ == "__main__":
@@ -21,13 +21,15 @@ if __name__ == "__main__":
 
 	huffman_tree = tree_management.HuffmanTree().create_huffman_tree(text_frequences)
 
-	bin_textsimple = tree_management.HuffmanTree().compress_text(huffman_tree,text)
+	bin_textsimple,alphabet_binaire = tree_management.HuffmanTree().compress_text(huffman_tree,text)
+
 
 	fichier_compress = file_management.File(require.result_data + "result_" + config.FILE_NAME).write_file(bin_textsimple)
 
-	ratio = ratio_management.Ratio(text,bin_textsimple,config.FILE_NAME).get_precent_save()
+	ratio = ratio_management.Ratio(alphabet_binaire,text_frequences,text).get_precent_save()
 
 	print(ratio)
+
 
 
 

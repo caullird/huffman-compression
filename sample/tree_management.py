@@ -66,7 +66,6 @@ class HuffmanTree:
 		for letter in text:
 			result_bin += alphabet_compress[letter]
 
-
 		return result_bin,alphabet_compress
 		#return hex(int(result_bin,2))
 

@@ -23,10 +23,10 @@ if __name__ == "__main__":
 
 	bin_textsimple,alphabet_binaire = tree_management.HuffmanTree().compress_text(huffman_tree,text)
 
-
 	fichier_compress = file_management.File(require.result_data + "result_" + config.FILE_NAME).write_file(bin_textsimple)
 
 	ratio = ratio_management.Ratio(alphabet_binaire,text_frequences,text).get_precent_save()
+
 
 	print(ratio)
 

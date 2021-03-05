@@ -12,6 +12,7 @@ class HuffmanCompress:
 	def __init__(self,data):
 		self.data = self.initilize_data(data)
 		self.is_file = False
+		self.compress = self.compress()
 
 	def sef_is_file(self,data):
 		self.is_file = data

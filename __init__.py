@@ -15,6 +15,7 @@ if __name__ == "__main__":
 
 
 	# Récupération de la chaine de caractère 
+	
 	file = file_management.File(require.initial_data + config.FILE_NAME)
 
 	text = file.open_file()

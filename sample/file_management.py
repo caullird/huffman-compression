@@ -11,7 +11,7 @@ class File:
 		self.file = value
 
 	def open_file(self):
-		return open(self.file, "r")
+		return open(self.file, "r").read()
 
 	def write_file_freq(self,data):
 		f = open(self.file,"w")
@@ -23,7 +23,7 @@ class File:
 		f.close()
 
 	def write_file(self,data):
-		f = open(self.file,"w")
+		f = open(self.file,"w+")
 
 		f.write(data)
 

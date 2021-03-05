@@ -1,3 +1,6 @@
+import os.path
+from os import path
+
 
 class File:
 
@@ -13,8 +16,19 @@ class File:
 	def open_file(self):
 		return open(self.file, "r").read()
 
-	def write_file_freq(self,data):
-		f = open(self.file,"w")
+
+	def file_exist(self):
+		if(path.exists(self.file)):
+			return True
+		
+		return False 
+
+	def write_file_freq(self,data,is_file = False):
+
+		if(is_file):
+			f = open(self.file,"w")
+		else: 
+			f = open(self.file + ".txt","w")
 
 		f.write(str(len(data)) + "\n")
 
@@ -26,7 +40,6 @@ class File:
 		f = open(self.file,"w+")
 
 		f.write(data)
-
 
 
 

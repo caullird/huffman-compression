@@ -31,3 +31,16 @@ class Ratio:
 
 		return float(count_compress/count_initial)
 
+	
+	def nombre_moyen(self):
+		somme = 0 
+
+		arbre_binaire = self.get_alphabet_binaire()
+
+
+		for letter in arbre_binaire.values():
+			somme += len(letter)
+
+		return(somme/len(arbre_binaire))
+
+

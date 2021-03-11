@@ -36,8 +36,7 @@ class Ratio:
 		somme = 0 
 
 		arbre_binaire = self.get_alphabet_binaire()
-
-
+		
 		for letter in arbre_binaire.values():
 			somme += len(letter)
 

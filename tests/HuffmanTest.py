@@ -12,6 +12,9 @@ import requirements as require
 
 class HuffmanTest(unittest.TestCase):
 	def unitTest(self):
+		print("\n\n")
+		print("##############################################")
+		print("Tests unitaires : ")
 		unittest.main()
 
 	def test_frequence(self):

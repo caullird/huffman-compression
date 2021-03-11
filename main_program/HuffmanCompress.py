@@ -67,7 +67,7 @@ class HuffmanCompress:
 
 		fichier_compress = File(require.result_data + "result_" + self.text).write_file(bin_textsimple)
 
-		#Gestion du ratio de compression
+		# Gestion du ratio de compression
 
 		ratio = Ratio(alphabet_binaire,text_frequences,self.text)
 
@@ -78,6 +78,7 @@ class HuffmanCompress:
 		self.write_result(text_frequences,bin_textsimple,alphabet_binaire,ratio_percent,nb_moyen)
 
 	def write_result(self,text_frequences,bin_textsimple,alphabet_binaire,ratio_percent,nb_moyen):
+
 		print("\n")
 		print("##############################################")
 		print("Resultat pour le texte suivant : ")

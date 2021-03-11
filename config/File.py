@@ -1,7 +1,6 @@
 import os.path
 from os import path
 
-
 class File:
 
 	def __init__(self,file):
@@ -37,7 +36,7 @@ class File:
 		f.close()
 
 	def write_file(self,data):
-		f = open(self.file,"w+")
+		f = open(self.file + ".txt","w+")
 
 		f.write(data)
 

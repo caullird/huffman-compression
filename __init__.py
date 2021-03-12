@@ -6,10 +6,10 @@ if __name__ == "__main__":
 
 
 	# Chaine de caractère
-	huffman = HuffmanCompress("bonjour!!", debug = True)
+	#HuffmanCompress("bonjour!!", debug = True)
 
 	# Fichier
-	#huffman = HuffmanCompress("bonjour.txt", debug = False)
+	HuffmanCompress("alice.txt", debug = True)
 	
 
 	#Fichiers de tests

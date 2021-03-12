@@ -1,15 +1,19 @@
 from config.File import File
+from config.PrintResult import PrintResult
 
 from main_program.Frequence import Frequence
 from main_program.HuffmanTree import HuffmanTree
 from main_program.Compress import Compress
 from main_program.Ratio import Ratio
 
+
+
 import requirements as require
 
 class HuffmanCompress:
 
-	def __init__(self,data):
+	def __init__(self,data, debug = False):
+		self.debug = debug
 		self.paramater = data
 		self.text = self.initilize_data(data)
 		self.is_file = False
@@ -75,29 +79,6 @@ class HuffmanCompress:
 
 		nb_moyen = ratio.nombre_moyen()
 
-		self.write_result(text_frequences,bin_textsimple,alphabet_binaire,ratio_percent,nb_moyen)
 
-	def write_result(self,text_frequences,bin_textsimple,alphabet_binaire,ratio_percent,nb_moyen):
-
-		print("\n")
-		print("##############################################")
-		print("Resultat pour le texte suivant : ")
-		print(self.text)
-		print("##############################################")
-		print("Alphabet de fréquence :")
-		print(text_frequences)
-		print("##############################################")
-		print("Alphabet binaire :")
-		print(alphabet_binaire)
-		print("##############################################")
-		print("Conversion du texte en binaire :")
-		print(bin_textsimple)
-		print("##############################################")
-		print("Ratio de compression :")
-		print(ratio_percent)
-		print("##############################################")
-		print("Nombre moyen de bits de stockage :")
-		print(nb_moyen)
-		print("##############################################")
-
-
+		if(self.debug):
+			PrintResult(self.text,text_frequences,bin_textsimple,alphabet_binaire,ratio_percent,nb_moyen)

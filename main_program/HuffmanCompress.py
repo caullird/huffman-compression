@@ -24,7 +24,7 @@ class HuffmanCompress(HuffmanCompressInterface):
 
     """
 
-	def __init__(self,data:str, debug:bool = False):
+	def __init__(self,data: str, debug: bool = False):
 
 		""" Constructor of the HuffmanCompress class
 
@@ -124,7 +124,7 @@ class HuffmanCompress(HuffmanCompressInterface):
 	    # Creation of the aborescence of the results files
 
 		frequence_data = Requirement("frequence_data")
-		
+
 		result_data = Requirement("result_data")
 
   		# Determine the frequency and write it to a file : 
@@ -133,7 +133,7 @@ class HuffmanCompress(HuffmanCompressInterface):
 
 		text_frequences = freq.get_frequence()
 
-		file_freq = File(frequence_data.get_path() + "lex_" + self.text)
+		file_freq = File(frequence_data.get_path() + "lex_" + self.paramater)
 
 		file_freq.write_file_freq(text_frequences,self.is_file)
 
@@ -149,7 +149,7 @@ class HuffmanCompress(HuffmanCompressInterface):
 
 		bin_textsimple,alphabet_binaire = compress.compress_text(huffman_tree,self.text)
 
-		fichier_compress = File(result_data.get_path() + "result_" + self.text).write_file(bin_textsimple)
+		fichier_compress = File(result_data.get_path() + "result_" + self.paramater).write_file(bin_textsimple)
 
 		# Determine compression ratios
 

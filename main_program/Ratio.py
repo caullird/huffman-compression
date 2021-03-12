@@ -1,7 +1,7 @@
 # Importation of interfaces
 from main_program.Interface.RatioInterface import RatioInterface
 
-class Ratio:
+class Ratio(RatioInterface):
 
 	""" Class Ratio
 
@@ -11,7 +11,7 @@ class Ratio:
 
     """
 
-	def __init__(self, alphabet_binaire:dict, text_frequences:dict, uncompressed_file:str):
+	def __init__(self, alphabet_binaire: dict, text_frequences: dict, uncompressed_file: str):
 
 		""" Constructor of the HuffmanCompress class
 

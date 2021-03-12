@@ -1,14 +1,11 @@
 from config.File import File
 from config.PrintResult import PrintResult
+from config.Requirement import Requirement
 
 from main_program.Frequence import Frequence
 from main_program.HuffmanTree import HuffmanTree
 from main_program.Compress import Compress
 from main_program.Ratio import Ratio
-
-
-
-import requirements as require
 
 class HuffmanCompress:
 
@@ -36,7 +33,7 @@ class HuffmanCompress:
 
 	def initilize_data(self,data):
 
-		file = File(require.initial_data + data)
+		file = File(Requirement("initial_data").get_path() + data)
 
 		if(file.file_exist()):
 			self.set_is_file(True)
@@ -46,14 +43,18 @@ class HuffmanCompress:
 
 	def compress(self):
 
-		# Gestion de la fréquence & écriture dans un fichier lex_ : 
+		frequence_data = Requirement("frequence_data")
+		result_data = Requirement("result_data")
+
+
+  		# Gestion de la fréquence & écriture dans un fichier lex_ : 
 
 		freq = Frequence(self.text)
 
 		text_frequences = freq.get_frequence()
 
 
-		file_freq = File(require.data_lexique_freq + "lex_" + self.text)
+		file_freq = File(frequence_data.get_path() + "lex_" + self.text)
 
 		file_freq.write_file_freq(text_frequences,self.is_file)
 
@@ -69,7 +70,7 @@ class HuffmanCompress:
 
 		bin_textsimple,alphabet_binaire = compress.compress_text(huffman_tree,self.text)
 
-		fichier_compress = File(require.result_data + "result_" + self.text).write_file(bin_textsimple)
+		fichier_compress = File(result_data.get_path() + "result_" + self.text).write_file(bin_textsimple)
 
 		# Gestion du ratio de compression
 

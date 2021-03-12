@@ -7,7 +7,7 @@ from main_program.HuffmanTree import HuffmanTree
 from main_program.Compress import Compress
 from main_program.Ratio import Ratio
 
-import requirements as require
+
 
 
 class HuffmanTest(unittest.TestCase):

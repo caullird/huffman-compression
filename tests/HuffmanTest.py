@@ -59,7 +59,7 @@ class HuffmanTest(unittest.TestCase):
 		ratio = Ratio(alphabet_binaire,text_frequences,"bonjour!!")
 
 		ratio_percent = ratio.get_precent_save()
-		nb_moyen = ratio.nombre_moyen()
+		nb_moyen = ratio.character_avg()
 
 		self.assertEqual(round(ratio_percent,3),0.347)
 		self.assertEqual(round(nb_moyen,3),2.857)

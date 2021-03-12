@@ -32,7 +32,7 @@ class Ratio:
 		return float(count_compress/count_initial)
 
 	
-	def nombre_moyen(self):
+	def character_avg(self):
 		somme = 0 
 
 		arbre_binaire = self.get_alphabet_binaire()

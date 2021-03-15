@@ -77,7 +77,9 @@ class Ratio(RatioInterface):
 		for letter_f in self.get_text_frequences():
 			count_compress += int(len(self.get_alphabet_binaire()[letter_f[0]]) * letter_f[1])
 
-		return float(count_compress/count_initial)
+		print(count_compress,count_initial)
+
+		return 1 - float(count_compress/count_initial)
 
 	
 	def character_avg(self):

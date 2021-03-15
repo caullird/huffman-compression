@@ -6,12 +6,8 @@ if __name__ == "__main__":
 
 
 	# Chaine de caractère
-	#HuffmanCompress("bonjour!!", debug = True)
+	#HuffmanCompress("textesimple.txt", debug = True)
 
 	# Fichier
-	HuffmanCompress("alice.txt", debug = True)
+	HuffmanCompress("Le PolyCrew c'est vraiment cool", debug = True)
 	
-
-	#Fichiers de tests
-
-	HuffmanTest().unitTest()

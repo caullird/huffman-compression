@@ -38,7 +38,7 @@ class HuffmanCompress(HuffmanCompressInterface):
 	    """
 		self.debug = debug
 		self.paramater = data
-		self.text = self.initilize_data(data)
+		self.text = self.initialize_data(data)
 		self.is_file = False
 		self.compress = self.compress()
 
@@ -85,7 +85,7 @@ class HuffmanCompress(HuffmanCompressInterface):
 			return self.paramater[0:10]
 
 
-	def initilize_data(self, data:str):
+	def initialize_data(self, data:str):
 
 		"""Allows to read the file if it is a file
 
@@ -148,6 +148,8 @@ class HuffmanCompress(HuffmanCompressInterface):
 		compress = Compress()
 
 		bin_textsimple,alphabet_binaire = compress.compress_text(huffman_tree,self.text)
+
+		print(alphabet_binaire)
 
 		fichier_compress = File(result_data.get_path() + "result_" + self.paramater).write_file(bin_textsimple)
 

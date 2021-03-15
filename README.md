@@ -2,7 +2,14 @@
 
 A python project to compress data based on character frequency
 
+
+## Explanation of the algorithm
+
+![image](https://user-images.githubusercontent.com/54810120/111121329-cbf93080-856c-11eb-94d3-18ba8f5ebc4e.png)
+
+
 This repository contains files for huffman package and test files for it in `tests/` directory.
+
 
 ## Installation instructions (dev)
 

@@ -5,6 +5,8 @@ A python project to compress data based on character frequency
 
 ## Explanation of the algorithm
 
+Huffman coding is a lossless data compression algorithm. Huffman coding uses a variable length code to represent a symbol from the source (for example a character in a file).
+
 ![image](https://user-images.githubusercontent.com/54810120/111121329-cbf93080-856c-11eb-94d3-18ba8f5ebc4e.png)
 
 
@@ -27,7 +29,7 @@ With a string of characters :
 HuffmanCompress("ProjetAlgorithmique", debug = True)
 ```
 
-With a text file (put the txt file in 'data/initial_data'
+With a text file (put the txt file in `data/initial_data`
 ```python
 HuffmanCompress("fichier.txt",debug = True)
 ```
